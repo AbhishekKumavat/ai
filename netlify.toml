@@ -1,7 +1,11 @@
 [build]
-  command = "python3 -m pip install --upgrade pip setuptools wheel && python3 -m pip install -r requirements.txt && cd frontend && npm install && npm run build"
-  publish = "frontend/.svelte-kit/output/client"
-  functions = "netlify/functions"
+  base = "frontend"
+  command = "npm run build"
+  publish = ".svelte-kit/output/client"
+  functions = "../netlify/functions"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
 
 [build.environment]
   PYTHON_VERSION = "3.11"
