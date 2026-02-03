@@ -1,0 +1,2 @@
+# Requirements for Netlify functions
+# The main requirements.txt will be installed during build
