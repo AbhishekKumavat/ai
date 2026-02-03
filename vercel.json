@@ -2,25 +2,28 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
+      "src": "api/index.py",
+      "use": "@vercel/python",
       "config": {
-        "distDir": "build"
+        "runtime": "python3.12",
+        "includeFiles": [
+          "api/**",
+          "detector.py",
+          "paraphraser.py", 
+          "rewriter.py"
+        ],
+        "excludeFiles": [
+          "node_modules/**",
+          "frontend/**",
+          "*.md"
+        ]
       }
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
+  "functions": {
+    "api/index.py": {
+      "memory": 3008,
+      "maxDuration": 60
     }
-  ]
+  }
 }
