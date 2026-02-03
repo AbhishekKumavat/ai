@@ -1,8 +1,8 @@
 [build]
-  base = "frontend"
-  command = "npm run build"
-  publish = ".svelte-kit/output/client"
-  functions = "../netlify/functions"
+  base = "."
+  command = "bash ./build.sh"
+  publish = "frontend/build"
+  functions = "netlify/functions"
 
 [[plugins]]
   package = "@netlify/plugin-functions-install-core"
