@@ -6,7 +6,7 @@ const config = {
 		prerender: {
 			crawl: true,
 			handleMissingId: 'warn',
-			entries: ['*', '/']
+			entries: ['*']
 		},
 		adapter: adapter({
 			fallback: 'index.html'
