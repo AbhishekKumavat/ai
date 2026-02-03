@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"dev:full": "node ../start-dev.js",
-		"build": "vite build",
+		"build": "npm run build:frontend",
+		"build:frontend": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''"
 	},
